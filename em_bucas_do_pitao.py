@@ -1,18 +1,20 @@
 
 
+def esc_personagem(sel):
+    if sel == 'j':
+        fases(sel)
+    elif sel == 'n':
+        fases(sel)
+    elif sel == 'r':
+        fases(sel)
+    else:
+        print('Personagem indefinido')
 
-
-print('__' *20)
-print('***** EM BUSCA DO PITÃO *****')
-print('__' *20)
-entrar = input(">>>>> Aperte Enter <<<<<")
 
 def personagem():
     print('__' *20)
     print()
     print(' - Seleção de Personagens - ')
-    print('[b] Bruna')
-    print('.. Passou por vários desafios na vida e junto com a Resilia, passsará por mais desafios ainda..')
     print('[j] Jonathan')
     print('..Direto da área da saúde, Jonathan com o apoio da Resilia, está mais do que preparado para a migração de carreira..')
     print('[n] Nathaly')
@@ -20,13 +22,11 @@ def personagem():
     print('[r] Raian')
     print('..Com uma bagagem de conhecimento e o suporte da Resilia, Raian está mais do que preparado para os proximos desafios..') 
     print()
-    selecao = input('Digite a inicial desejada [b, j, n ou r]: ')
-    return selecao
+    selecao = input('Digite a inicial desejada [j, n ou r]: ')
+    esc_personagem(selecao)
 
 def fases(selecao):
-    if selecao == 'b':
-        bruna()
-    elif selecao == 'j':
+    if selecao == 'j':
         jonathan()
     elif selecao == 'n':
         nathaly()
@@ -35,54 +35,6 @@ def fases(selecao):
     else:
         print('Personagem Indefinido')
 
-def bruna():
-    print()
-    print()
-    print('Fase 1 - Mindset de Crescimento')
-    print()
-    print('Apesar de determinada, ela tinha problemas com foco e procrastinação.')
-    print('Com a Resilia aprendeu que com mudanças de hábitos, é possivel evoluir. Ajude a Bruna na escolha:')
-    print()
-    print('[a] Trasforme as oportunidades em  dificuldades.')
-    print('[b] Fortaleça seus pontos fortes através do autoconhecimento.')
-    print()
-    resposta = input('Digite uma das opções [a ou b]: ')
-    if resposta != 'b':
-        print('Resposta errada, tente outra vez')
-        personagem()
-    elif resposta == 'b':
-        print('Mandou bem, bora para a proxima fase!')
-    print()
-    print()
-    print('Fase 2 - Postura Profissional')
-    print()
-    print('Em sua jornada, Bruna deparou-se com mais uma dificuldade.')
-    print('Sabendo que postura profissional positiva é um diferencial, marque a opção que correta:')
-    print()
-    print('[a] Seja sincero fale mal ou fale bem, mas fale.')
-    print('[b] Respeite a politica da empresa e leve seu trabalho a sério.')
-    resposta = input('Digite uma das opções [a ou b]: ')
-    if resposta != 'b':
-        print('Resposta errada, tente outra vez')
-        personagem()  
-    elif resposta == 'b':
-        print('Aí sim, bora para a última fase! \o/')          
-    print()
-    print('Fase 3 - Vieses Cognitivos')
-    print()
-    print('Em seu último desafio, em meio as armadilhas, Bruna terá cuidado para não tomar decisões irracionais?!')
-    print('Escolha a alternativa correta, dos principais vieses cognitivos são:')
-    print()
-    print('[a] Viés da "Maria vai com as outras, Viés da Confirmação e Viés de Positividade.')
-    print('[b] Viés da decoragem, Viés da formação e Viés da pré escolha.')
-    print()
-    resposta = input('Digite uma das opções [a ou b]: ')
-    if resposta != 'a':
-        print('Resposta errada, tente outra vez')
-        personagem()  
-    elif resposta == 'a':
-        print('PARABÉNS! Você manja mesmo de Softskills! ')
-        print('__' *20)
 
   
 def jonathan():
@@ -96,9 +48,11 @@ def jonathan():
     print('[a] Com metas estabelecidas e respeitadas, as chances de ter um resultado positivo, são maiores.')
     print('[b] O imediatismo dos objetivos é a chave do sucesso.')
     resposta = input('Digite uma das opções [a ou b]: ')
-    if resposta == 'a':
+    if resposta != 'a':
+        print('Resposta errada, tente outra vez')
+        personagem()
+    elif resposta == 'a':
         print('Mandou bem, bora para a proxima fase!')
-        return resposta
     print()
     print()
     print('Fase 2 - Inovação')
@@ -126,10 +80,12 @@ def jonathan():
     resposta = input('Digite uma das opções [a ou b]: ')
     if resposta != 'b':
         print('Resposta errada, tente outra vez')
-        return selecaoPersonagem  
+        personagem()  
     elif resposta == 'b':
         print('PARABÉNS! As chances de um emprego está logo aí! ;) ')
+        print('Jonatham finalmente conseguiu o emprego dos seus sonhos!')
         print('__' *20)
+        personagem()
 
 def nathaly():
     print()
@@ -142,9 +98,44 @@ def nathaly():
     print('[a] Todoist e Trello.')
     print('[b] Excel e Vs code.')
     resposta = input('Digite uma das opções [a ou b]: ')
-    if resposta == 'a':
+    if resposta != 'a':
+        print('Resposta errada, tente outra vez')
+        personagem()
+    elif resposta == 'a':
         print('Mandou bem, bora para a proxima fase!')
-        return resposta
+    print()
+    print()
+    print('Fase 2 - Postura Profissional')
+    print()
+    print('Em sua jornada, Nathaly deparou-se com mais uma dificuldade.')
+    print('Sabendo que postura profissional positiva é um diferencial, marque a opção que correta:')
+    print()
+    print('[a] Seja sincero fale mal ou fale bem, mas fale.')
+    print('[b] Respeite a politica da empresa e leve seu trabalho a sério.')
+    resposta = input('Digite uma das opções [a ou b]: ')
+    if resposta != 'b':
+        print('Resposta errada, tente outra vez')
+        personagem()  
+    elif resposta == 'b':
+        print('Aí sim, bora para a última fase! \o/')          
+    print()
+    print('Fase 3 - Vieses Cognitivos')
+    print()
+    print('Em seu último desafio, em meio as armadilhas, Bruna terá cuidado para não tomar decisões irracionais?!')
+    print('Escolha a alternativa correta, dos principais vieses cognitivos são:')
+    print()
+    print('[a] Viés da "Maria vai com as outras, Viés da Confirmação e Viés de Positividade.')
+    print('[b] Viés da decoragem, Viés da formação e Viés da pré escolha.')
+    print()
+    resposta = input('Digite uma das opções [a ou b]: ')
+    if resposta != 'a':
+        print('Resposta errada, tente outra vez')
+        personagem()  
+    elif resposta == 'a':
+        print('PARABÉNS! Você manja mesmo de Softskills! ')
+        print('No meio de tanta correria, Nathaly finalmente conseguiu equilibrar mais sua rotina de sucesso!')
+        print('__' *20)
+        personagem()    
 
 def raian():
     print()
@@ -157,25 +148,50 @@ def raian():
     print('[a] A prática da escuta com feedbacks, sem a necessidde de sua atenção.')
     print('[b] Estabelecendo limites, é possivel ter seu espaço, manter o foco e produtividade.')
     resposta = input('Digite uma das opções [a ou b]: ')
-    if resposta == 'b':
+    if resposta != 'b':
+        print('Resposta errada, tente outra vez')
+        personagem()
+    elif resposta == 'b':    
         print('Mandou bem, bora para a proxima fase!')
-        return resposta
+    print()
+    print()
+    print('Fase 2 - Visão de negocios')
+    print()
+    print('Na sua busca pelo conhecimento, Raian se deu conta que nem tudo é programar.')
+    print('Mas com essa competencia, ele não estava familiarizado. Ajude Raian a deicidr qual a melhor opção:')
+    print()
+    print('[a] Foco no individual, terminar o prazo é o mais importante.')
+    print('[b] Coleta de experiencias e informações referente ao tipo de negocio trabalhado.')
+    resposta = input('Digite uma das opções [a ou b]: ')
+    if resposta != 'b':
+        print('Resposta errada, tente outra vez')
+        personagem()  
+    elif resposta == 'b':
+        print('Aí sim, bora para a última fase! \o/')          
+    print()
+    print('Fase 3 - Pensamento crítico')
+    print()
+    print('Para se ter conhecimento real, é essencial que você identifique e retome as informações que receber.')
+    print('Raian continua tendo problemas com soft, assinale a opção correta sobre pensamento crítico:')
+    print()
+    print('[a] Analisam e compreendem padrões.')
+    print('[b] Aceitam lógicas simples')
+    print()
+    resposta = input('Digite uma das opções [a ou b]: ')
+    if resposta != 'a':
+        print('Resposta errada, tente outra vez')
+        personagem()  
+    elif resposta == 'a':
+        print('PARABÉNS! Você manja mesmo de Softskills! ')
+        print('Sua jornada foi dura mas com ajuda das facilitadoras, foi possivel realizar seus objetivos! ')
+        print('__' *20)
+        personagem()        
+
+print('__' *20)
+print('***** EM BUSCA DO PITÃO *****')
+print('__' *20)
+entrar = input(">>>>> Aperte Enter <<<<<")
+personagem()
 
 
-while True:
-    selecaoPersonagem = personagem()
-    if selecaoPersonagem == 'b':
-        fases(selecaoPersonagem)
-        break
-    elif selecaoPersonagem == 'j':
-        fases(selecaoPersonagem)
-        break
-    elif selecaoPersonagem == 'n':
-        fases(selecaoPersonagem)
-        break
-    elif selecaoPersonagem == 'r':
-        fases(selecaoPersonagem)
-        break
-    else:
-        print('Personagem indefinido')
         
